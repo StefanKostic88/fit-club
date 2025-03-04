@@ -2,6 +2,17 @@ import Header from "../Header/Header";
 import Button from "../ui/Button/Button";
 import styles from "./Hero.module.css";
 
+const figuresData = [
+  { numbers: "+140", info: "Expert coatches" },
+  { numbers: "+978", info: "Memebrs joined" },
+  { numbers: "+50", info: "Fitness Programs" },
+];
+
+const heroTextData = [
+  "Ideal Body",
+  "In here we will help you to shape and build your ideal body and live up your life to fullest",
+];
+
 const Hero = () => {
   return (
     <div className={styles.hero}>
@@ -17,30 +28,20 @@ const Hero = () => {
             <span className="stroke-text">Shape </span>
             <span>Your</span>
           </div>
-          <div>
-            <span>Ideal Body</span>
-          </div>
-          <div>
-            <span>
-              In here we will help you to shape and build your ideal body and
-              live up your life to fullest
-            </span>
-          </div>
+          {heroTextData.map((text, index) => (
+            <div key={index}>
+              <span>{text}</span>
+            </div>
+          ))}
         </div>
 
         <div className={styles.figures}>
-          <div>
-            <span>+140</span>
-            <span>expert coatches</span>
-          </div>
-          <div>
-            <span>+978</span>
-            <span>Memebrs joined</span>
-          </div>
-          <div>
-            <span>+50</span>
-            <span>Fitness Programs</span>
-          </div>
+          {figuresData.map(({ info, numbers }, index) => (
+            <div key={index}>
+              <span>{numbers}</span>
+              <span>{info}</span>
+            </div>
+          ))}
         </div>
 
         <div className={styles["hero-buttons"]}>
