@@ -1,17 +1,18 @@
 import Header from "../Header/Header";
-import "./Hero.css";
+import Button from "../ui/Button/Button";
+import styles from "./Hero.module.css";
 
 const Hero = () => {
   return (
-    <div className="hero">
-      <div className="left-h">
+    <div className={styles.hero}>
+      <div className={styles["left-h"]}>
         <Header />
-        <div className="the-best-ad">
+        <div className={styles["the-best-ad"]}>
           <div></div>
           <span>the best fitness club in the town</span>
         </div>
 
-        <div className="hero-text">
+        <div className={styles["hero-text"]}>
           <div>
             <span className="stroke-text">Shape </span>
             <span>Your</span>
@@ -27,7 +28,7 @@ const Hero = () => {
           </div>
         </div>
 
-        <div className="figures">
+        <div className={styles.figures}>
           <div>
             <span>+140</span>
             <span>expert coatches</span>
@@ -42,12 +43,12 @@ const Hero = () => {
           </div>
         </div>
 
-        <div className="hero-buttons">
-          <button className="btn">Get Started</button>
-          <button className="btn">Learn More</button>
+        <div className={styles["hero-buttons"]}>
+          <Button text="Get Started" />
+          <Button text="Learn More" />
         </div>
       </div>
-      <div className="right-h">SIDES</div>
+      <div className={styles["right-h"]}>SIDES</div>
     </div>
   );
 };
