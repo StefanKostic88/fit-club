@@ -3,6 +3,7 @@ export { default as Header } from "./Header/Header";
 export { default as Programs } from "./Programs/Programs";
 export { default as Reasons } from "./Reasons/Reasons";
 export { default as Plans } from "./Plans/Plans";
+export { default as Testemonials } from "./Testemonials/Testemonials";
 
 // UI
 export { default as Button } from "./ui/Button/Button";
