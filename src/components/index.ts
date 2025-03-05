@@ -6,3 +6,4 @@ export { default as Plans } from "./Plans/Plans";
 
 // UI
 export { default as Button } from "./ui/Button/Button";
+export { default as CustomHeader } from "./ui/CustomHeader/CustomHeader";

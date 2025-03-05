@@ -1,19 +1,14 @@
 import { programsData } from "../../data/programsData";
 import RightArrow from "../../assets/rightArrow.png";
 import styles from "./Programs.module.css";
+import CustomHeader from "../ui/CustomHeader/CustomHeader";
 
 const programsHeaderData = ["Explore our", "Programs", "To shape you"];
 
 const Programs = () => {
   return (
     <div className={styles.programs} id="programs">
-      <div className={styles["programs-header"]}>
-        {programsHeaderData.map((header, index) => (
-          <span key={index} className={index !== 1 ? "stroke-text" : ""}>
-            {header}
-          </span>
-        ))}
-      </div>
+      <CustomHeader data={programsHeaderData} />
 
       <div className={styles["program-categories"]}>
         {programsData.map(({ image, heading, details }, index) => (
