@@ -2,14 +2,18 @@ import styles from "./Button.module.css";
 
 interface ButtonProps {
   text: string;
-  additionalStyles?: { [key: string]: string };
+  additionalStyles?: { [key: string]: string } | null;
 }
 
 const Button = ({ text, additionalStyles }: ButtonProps) => {
-  return (
-    <button className={`${styles.btn}`} style={additionalStyles}>
+  const additionalStylesCopy = { ...additionalStyles };
+
+  return additionalStyles ? (
+    <button className={`${styles.btn}`} style={additionalStylesCopy}>
       {text}
     </button>
+  ) : (
+    <button className={`${styles.btn}`}>{text}</button>
   );
 };
 
