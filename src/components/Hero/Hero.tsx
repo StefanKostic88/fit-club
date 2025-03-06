@@ -6,6 +6,7 @@ import hero_image from "../../assets/hero_image.png";
 import hero_image_back from "../../assets/hero_image_back.png";
 import Calories from "../../assets/calories.png";
 import Blur from "../ui/Blur/Blur";
+import { motion } from "framer-motion";
 
 const figuresData = [
   { numbers: "+ 140", info: "Expert coaches" },
@@ -19,13 +20,19 @@ const heroTextData = [
 ];
 
 const Hero = () => {
+  const transition = { type: "spring", duration: 3 };
   return (
     <div className={styles.hero}>
       <Blur additionalStyle="hero-blur" />
       <div className={styles["left-h"]}>
         <Header />
         <div className={styles["the-best-ad"]}>
-          <div></div>
+          <motion.div
+            initial={{ left: "238px" }}
+            whileInView={{ left: "8px" }}
+            transition={{ ...transition, type: "tween" }}
+          ></motion.div>
+
           <span>the best fitness club in the town</span>
         </div>
 
@@ -66,30 +73,43 @@ const Hero = () => {
           }}
         />
 
-        <div className={styles["heart-rate"]}>
+        <motion.div
+          className={styles["heart-rate"]}
+          initial={{ right: "-1rem" }}
+          whileInView={{ right: "4rem" }}
+          transition={transition}
+        >
           <img src={Heart} alt="heart-rate-image" />
           <span>Heart Rate</span>
           <span>116 bpm</span>
-        </div>
+        </motion.div>
 
         <img
           src={hero_image}
           alt="hero image"
           className={styles["hero-image"]}
         />
-        <img
+        <motion.img
           src={hero_image_back}
           alt="hero image black"
           className={styles["hero-image-back"]}
+          initial={{ right: "11rem" }}
+          whileInView={{ right: "20rem" }}
+          transition={transition}
         />
 
-        <div className={styles.calories}>
+        <motion.div
+          className={styles.calories}
+          initial={{ right: "37rem" }}
+          whileInView={{ right: "28rem" }}
+          transition={transition}
+        >
           <img src={Calories} alt="calories" />
           <div>
             <span>Callories Burned</span>
             <span>220 kcl</span>
           </div>
-        </div>
+        </motion.div>
       </div>
     </div>
   );

@@ -3,8 +3,10 @@ import { testimonialsData } from "../../data/testimonialsData";
 import { useState } from "react";
 import leftArrow from "../../assets/leftArrow.png";
 import rightArrow from "../../assets/rightArrow.png";
+import { motion } from "framer-motion";
 
 const Testemonials = () => {
+  const transition = { type: "spring", duration: 3 };
   const [selectedReview, setSelectedReview] = useState<number>(0);
   const testemonialsLength = testimonialsData.length;
 
@@ -37,8 +39,17 @@ const Testemonials = () => {
         - {testimonialsData[selectedReview].status}
       </div>
       <div className={styles["right-t"]}>
-        <div></div>
-        <div></div>
+        <motion.div
+          initial={{ opacity: 0, x: -100 }}
+          transition={{ ...transition, duration: 2 }}
+          whileInView={{ opacity: 1, x: 0 }}
+        ></motion.div>
+        <motion.div
+          initial={{ opacity: 0, x: -100 }}
+          transition={{ ...transition, duration: 2 }}
+          whileInView={{ opacity: 1, x: 0 }}
+        ></motion.div>
+
         <img src={testimonialsData[selectedReview].image} alt="" />
         <div className={styles.arrows}>
           <img onClick={handleLeftClick} src={leftArrow} alt="left arrow" />
