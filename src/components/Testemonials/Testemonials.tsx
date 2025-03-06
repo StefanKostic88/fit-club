@@ -32,7 +32,15 @@ const Testemonials = () => {
         <span>Testimonials</span>
         <span className="stroke-text">What they</span>
         <span>say about us</span>
-        <span>{testimonialsData[selectedReview].review}</span>
+        <motion.span
+          key={selectedReview}
+          initial={{ opacity: 0, x: -100 }}
+          animate={{ opacity: 1, x: 0 }}
+          exit={{ opacity: 0, x: 100 }}
+          transition={transition}
+        >
+          {testimonialsData[selectedReview].review}
+        </motion.span>
         <span style={{ color: "var(--orange)" }}>
           {testimonialsData[selectedReview].name}
         </span>
@@ -50,7 +58,15 @@ const Testemonials = () => {
           whileInView={{ opacity: 1, x: 0 }}
         ></motion.div>
 
-        <img src={testimonialsData[selectedReview].image} alt="" />
+        <motion.img
+          src={testimonialsData[selectedReview].image}
+          alt="testemonial image"
+          key={selectedReview}
+          initial={{ opacity: 0, x: 100 }}
+          animate={{ opacity: 1, x: 0 }}
+          exit={{ opacity: 0, x: -100 }}
+          transition={transition}
+        />
         <div className={styles.arrows}>
           <img onClick={handleLeftClick} src={leftArrow} alt="left arrow" />
           <img onClick={handleRightClick} src={rightArrow} alt="right arrow" />
