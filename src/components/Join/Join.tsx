@@ -1,22 +1,17 @@
 import styles from "./Join.module.css";
 import Button from "../ui/Button/Button";
-import { FormEvent, useRef } from "react";
-import emailjs from "@emailjs/browser";
+import { FC, FormEvent, useRef } from "react";
 
-const Join = () => {
+const Join: FC<{ onEmailSelect: (email: string) => void }> = ({
+  onEmailSelect,
+}) => {
   const formRef = useRef<HTMLFormElement | null>(null);
-  // add modal and remove this
   const handleEmailSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    if (!formRef.current) return;
-    emailjs.sendForm("", "", formRef.current, "").then(
-      (result) => {
-        console.log(result);
-      },
-      (err) => {
-        console.log(err);
-      }
-    );
+    const inputEl = formRef.current?.childNodes[0] as HTMLInputElement;
+    if (!inputEl.value) return;
+    onEmailSelect(inputEl.value);
+    inputEl.value = "";
   };
 
   return (

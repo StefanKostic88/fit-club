@@ -1,3 +1,4 @@
+import { useState } from "react";
 import "./App.css";
 import {
   Hero,
@@ -7,9 +8,22 @@ import {
   Testemonials,
   Join,
   Footer,
+  Modal,
 } from "./components";
 
 function App() {
+  const [email, setEmail] = useState<string | null>(null);
+  const [isOpened, setIsOpened] = useState<boolean>(false);
+
+  const handleModalToggle = () => {
+    setIsOpened((prev) => !prev);
+  };
+
+  const onEmailSelect = (email: string) => {
+    setEmail(() => email);
+    handleModalToggle();
+  };
+
   return (
     <div className="App">
       <Hero />
@@ -17,8 +31,15 @@ function App() {
       <Reasons />
       <Plans />
       <Testemonials />
-      <Join />
+      <Join onEmailSelect={onEmailSelect} />
       <Footer />
+      <Modal
+        {...{
+          email,
+          onModalToggle: handleModalToggle,
+          isModalOpened: isOpened,
+        }}
+      />
     </div>
   );
 }
