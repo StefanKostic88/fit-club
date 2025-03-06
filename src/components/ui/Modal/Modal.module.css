@@ -11,7 +11,8 @@
   height: 20rem;
   border: 1px solid var(--orange);
   color: #fff;
-  background-color: gray;
+  /* background-color: gray; */
+  background-color: var(--appColor);
   border-radius: 5px;
   position: absolute;
   top: 50%;
@@ -30,4 +31,21 @@
 .modal > h2 {
   font-size: 2rem;
   margin-bottom: 1rem;
+}
+
+@media screen and (max-width: 768px) {
+  .modal {
+    width: 20rem;
+    gap: 1rem;
+  }
+  .modal > h2 {
+    font-size: 2rem;
+    margin-bottom: 0;
+  }
+}
+
+@media screen and (max-width: 430px) {
+  .modal {
+    width: 14rem;
+  }
 }

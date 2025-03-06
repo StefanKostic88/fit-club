@@ -42,6 +42,14 @@
   background-color: rgb(255, 155, 0);
 }
 
+.modal-blur {
+  width: 14rem;
+  height: 9rem;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
 @media screen and (max-width: 768px) {
   .hero-blur {
     width: 14rem;

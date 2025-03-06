@@ -11,4 +11,4 @@ export { default as Footer } from "./Footer/Footer";
 export { default as Button } from "./ui/Button/Button";
 export { default as CustomHeader } from "./ui/CustomHeader/CustomHeader";
 export { default as Blur } from "./ui/Blur/Blur";
-export { default as Modal } from "./ui/Modal/Modal";
+export { default as ModalWithOverlay } from "./ui/Modal/Modal";

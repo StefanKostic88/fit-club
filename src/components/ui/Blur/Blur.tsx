@@ -6,7 +6,8 @@ interface BlurInterface {
     | "plans-blur-1"
     | "plans-blur-2"
     | "footer-blur-1"
-    | "footer-blur-2";
+    | "footer-blur-2"
+    | "modal-blur";
 }
 
 const Blur = ({ additionalStyle }: BlurInterface) => {

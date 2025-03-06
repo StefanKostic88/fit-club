@@ -8,7 +8,7 @@ import {
   Testemonials,
   Join,
   Footer,
-  Modal,
+  ModalWithOverlay,
 } from "./components";
 
 function App() {
@@ -33,7 +33,7 @@ function App() {
       <Testemonials />
       <Join onEmailSelect={onEmailSelect} />
       <Footer />
-      <Modal
+      <ModalWithOverlay
         {...{
           email,
           onModalToggle: handleModalToggle,
