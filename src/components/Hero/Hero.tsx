@@ -5,6 +5,7 @@ import Heart from "../../assets/heart.png";
 import hero_image from "../../assets/hero_image.png";
 import hero_image_back from "../../assets/hero_image_back.png";
 import Calories from "../../assets/calories.png";
+import Blur from "../ui/Blur/Blur";
 
 const figuresData = [
   { numbers: "+ 140", info: "Expert coaches" },
@@ -20,6 +21,7 @@ const heroTextData = [
 const Hero = () => {
   return (
     <div className={styles.hero}>
+      <Blur additionalStyle="hero-blur" />
       <div className={styles["left-h"]}>
         <Header />
         <div className={styles["the-best-ad"]}>

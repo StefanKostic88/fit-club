@@ -3,12 +3,15 @@ import { plansData } from "../../data/plansData";
 import CustomHeader from "../ui/CustomHeader/CustomHeader";
 import Button from "../ui/Button/Button";
 import whitTick from "../../assets/whiteTick.png";
+import Blur from "../ui/Blur/Blur";
 
 const data = ["Ready to Start", "Your Journey", "Now with us"];
 
 const Plans = () => {
   return (
     <div className={styles["plans-container"]}>
+      <Blur additionalStyle="plans-blur-1" />
+      <Blur additionalStyle="plans-blur-2" />
       <CustomHeader data={data} additionalParentStyles={{ gap: "2rem" }} />
 
       <div className={styles.plans}>

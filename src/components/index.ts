@@ -10,3 +10,4 @@ export { default as Footer } from "./Footer/Footer";
 // UI
 export { default as Button } from "./ui/Button/Button";
 export { default as CustomHeader } from "./ui/CustomHeader/CustomHeader";
+export { default as Blur } from "./ui/Blur/Blur";
