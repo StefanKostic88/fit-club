@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/ban-ts-comment */
 import Header from "../Header/Header";
 import Button from "../ui/Button/Button";
 import styles from "./Hero.module.css";
@@ -7,6 +8,7 @@ import hero_image_back from "../../assets/hero_image_back.png";
 import Calories from "../../assets/calories.png";
 import Blur from "../ui/Blur/Blur";
 import { motion } from "framer-motion";
+// @ts-expect-error
 import NumberCounter from "number-counter";
 
 const figuresData = [
