@@ -5,6 +5,7 @@ export { default as Reasons } from "./Reasons/Reasons";
 export { default as Plans } from "./Plans/Plans";
 export { default as Testemonials } from "./Testemonials/Testemonials";
 export { default as Join } from "./Join/Join";
+export { default as Footer } from "./Footer/Footer";
 
 // UI
 export { default as Button } from "./ui/Button/Button";
