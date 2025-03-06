@@ -27,7 +27,7 @@ const Testemonials = () => {
   };
 
   return (
-    <div className={styles.testimonials}>
+    <div className={styles.testimonials} id="testemonials">
       <div className={styles["left-t"]}>
         <span>Testimonials</span>
         <span className="stroke-text">What they</span>

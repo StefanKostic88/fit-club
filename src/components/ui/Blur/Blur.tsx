@@ -14,8 +14,6 @@ const Blur = ({ additionalStyle }: BlurInterface) => {
     ? `${styles.blur} ${styles[additionalStyle]}`.trim()
     : styles.blur;
 
-  console.log(blurStyles);
-
   return <div className={blurStyles}></div>;
 };
 

@@ -9,7 +9,7 @@ const data = ["Ready to Start", "Your Journey", "Now with us"];
 
 const Plans = () => {
   return (
-    <div className={styles["plans-container"]}>
+    <div className={styles["plans-container"]} id="plans">
       <Blur additionalStyle="plans-blur-1" />
       <Blur additionalStyle="plans-blur-2" />
       <CustomHeader data={data} additionalParentStyles={{ gap: "2rem" }} />

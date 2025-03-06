@@ -7,11 +7,21 @@ import hero_image_back from "../../assets/hero_image_back.png";
 import Calories from "../../assets/calories.png";
 import Blur from "../ui/Blur/Blur";
 import { motion } from "framer-motion";
+import NumberCounter from "number-counter";
 
 const figuresData = [
-  { numbers: "+ 140", info: "Expert coaches" },
-  { numbers: "+ 978", info: "Members joined" },
-  { numbers: "+ 50", info: "Fitness Programs" },
+  {
+    numbers: <NumberCounter end={140} start={100} delay="4" preFix="+" />,
+    info: "Expert coaches",
+  },
+  {
+    numbers: <NumberCounter end={978} start={800} delay="4" preFix="+" />,
+    info: "Members joined",
+  },
+  {
+    numbers: <NumberCounter end={50} start={25} delay="4" preFix="+" />,
+    info: "Fitness Programs",
+  },
 ];
 
 const heroTextData = [
@@ -21,14 +31,15 @@ const heroTextData = [
 
 const Hero = () => {
   const transition = { type: "spring", duration: 3 };
+  const mobile = window.innerWidth <= 768 ? true : false;
   return (
-    <div className={styles.hero}>
+    <div className={styles.hero} id="hero">
       <Blur additionalStyle="hero-blur" />
       <div className={styles["left-h"]}>
         <Header />
         <div className={styles["the-best-ad"]}>
           <motion.div
-            initial={{ left: "238px" }}
+            initial={{ left: mobile ? "178px" : "238px" }}
             whileInView={{ left: "8px" }}
             transition={{ ...transition, type: "tween" }}
           ></motion.div>

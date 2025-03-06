@@ -60,3 +60,13 @@
 .plans > :nth-child(2) > svg {
   fill: #fff;
 }
+
+@media screen and (max-width: 768px) {
+  .plans {
+    flex-direction: column;
+  }
+
+  .plan:nth-child(2) {
+    transform: scale(1);
+  }
+}
